@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1 
+kind: Deployment 
+metadata: 
+  name: petapp-deployment 
+spec: 
+  replicas: 2 
+  template: 
+    metadata: 
+      labels: 
+        node: child1
+    spec: 
+      containers: 
+      - name: petapp-deployment 
+        image: jithendramuppalla/petapplication:latest
+        ports: 
+        - containerPort: 8080
